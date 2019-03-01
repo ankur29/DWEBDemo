@@ -16,3 +16,4 @@ C:\Users\ankur.choudhary\Documents\Visual Studio 2015\Projects\DemoProject\DemoP
 C:\Users\ankur.choudhary\Documents\Visual Studio 2015\Projects\DemoProject\DemoProject\bin\Debug\WebDriver.Support.xml
 C:\Users\ankur.choudhary\Documents\Visual Studio 2015\Projects\DemoProject\DemoProject\obj\Debug\DemoProject.dll
 C:\Users\ankur.choudhary\Documents\Visual Studio 2015\Projects\DemoProject\DemoProject\obj\Debug\DemoProject.pdb
+C:\Users\ankur.choudhary\Documents\Visual Studio 2015\Projects\DemoProject\DemoProject\obj\Debug\DemoProject.csprojResolveAssemblyReference.cache

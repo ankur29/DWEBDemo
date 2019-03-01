@@ -8,30 +8,30 @@ using System.Threading.Tasks;
 
 namespace DemoProject.BrowserUtility
 {
-     class SelectBrowser: TestRunner
+     class SelectBrowser
     {
         /**
          * @param browserName
          */
          //initiate the requested browser
-        public void getBrowser(string browserName)
-        {
-            if (browserName.Equals("Firefox"))
-            {
-                MozillaFirefoxBrowser mozilla = new MozillaFirefoxBrowser();
-                driver = mozilla.initiateBrowser();
-            }
-            else if (browserName.Equals("Chrome"))
-            {
-                ChromeBrowsers chrome = new ChromeBrowsers();
-                driver = chrome.initiateBrowser();
-            }
-            else if (browserName.Equals("IE"))
-            {
-                InternetExplorer IE = new InternetExplorer();
-                driver = IE.initiateBrowser();
-            }
-        }
+        //public void getBrowser(string browserName)
+        //{
+        //    if (browserName.Equals("Firefox"))
+        //    {
+        //        MozillaFirefoxBrowser mozilla = new MozillaFirefoxBrowser();
+        //        driver = mozilla.initiateBrowser();
+        //    }
+        //    else if (browserName.Equals("Chrome"))
+        //    {
+        //        ChromeBrowsers chrome = new ChromeBrowsers();
+        //        driver = chrome.initiateBrowser();
+        //    }
+        //    else if (browserName.Equals("IE"))
+        //    {
+        //        InternetExplorer IE = new InternetExplorer();
+        //        driver = IE.initiateBrowser();
+        //    }
+        //}
         
         //contains browser name
         public static IEnumerable<String> parallelBrowsers()

@@ -6,9 +6,14 @@ namespace DemoProject.BrowserUtility
 {
     
     //Initiate Webdriver instance
-    class TestRunner
+   public class TestRunner
     {
-        public static IWebDriver driver;
+          IWebDriver driver;
+
+        public TestRunner(IWebDriver _driver)
+        {
+            driver = _driver;
+        }
    /**
     * 
     * @param appUrl
@@ -19,8 +24,7 @@ namespace DemoProject.BrowserUtility
         {
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(implicitWait);
-            driver.Navigate().GoToUrl(appUrl);
-            
+            driver.Navigate().GoToUrl(appUrl);            
         }
 
 
