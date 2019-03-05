@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DemoProject.Library;
 
 namespace DemoProject.ReportUtility
@@ -24,7 +20,7 @@ namespace DemoProject.ReportUtility
             return path;
         }
         //create directory if not available
-        private static void CreateIfMissing(string path)
+        private  static void CreateIfMissing(string path)
         {
             try
             {

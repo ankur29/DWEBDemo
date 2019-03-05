@@ -1,4 +1,5 @@
 ﻿using DemoProject.BrowserUtility;
+using DemoProject.Library;
 using DemoProject.ObjectRepository;
 using OpenQA.Selenium;
 using RelevantCodes.ExtentReports;
@@ -6,23 +7,43 @@ using System;
 
 namespace DemoProject.BusinessUitilities
 {
-    class UserRegistration: TestRunner
+ public class UserRegistration
     {
-   
+        IWebDriver driver;
+        PerformAction performAction;
 
-        public ExtentTest createUser(ExtentReports report)
+
+        public UserRegistration(IWebDriver _driver)
+        {
+            driver = _driver;
+            performAction = new PerformAction(driver);
+
+        }
+
+        public void signUpUser()
+        {
+            
+            driver.FindElement(By.XPath(RegistrationPage.firstName)).SendKeys("TestFirstName");
+            driver.FindElement(By.XPath(RegistrationPage.lastName)).SendKeys("TestLastName");
+        }
+
+        public ExtentTest createUser(ExtentReports report,String firstName,String lastName)
         {
             ExtentTest registration = report.StartTest("SignUp");
             try
-            {
-                driver.FindElement(By.XPath(RegistrationPage.createAccount)).Click();
-                driver.FindElement(By.XPath(RegistrationPage.firstName)).SendKeys("TestFirstName");
-                driver.FindElement(By.XPath(RegistrationPage.lastName)).SendKeys("TestLastName");
-                registration.Log(LogStatus.Pass, "Sign UP Test Case");
+            {                              
+                performAction.clickButton(RegistrationPage.CREATEACCOUNT_SIGNUP_XPATH, "CREATEACCOUNT_SIGNUP_XPATH");
+               // driver.FindElement(By.XPath(RegistrationPage.createAccount)).Click();
+                driver.FindElement(By.XPath(RegistrationPage.firstName)).SendKeys(firstName);
+                driver.FindElement(By.XPath(RegistrationPage.lastName)).SendKeys(lastName);
+                registration.Log(LogStatus.Pass, "Sign UP Test Case");     
             }
             catch (Exception e)
             {
                 registration.Log(LogStatus.Fail, "Sign UP Test Case",e);
+                var imagePath = new CaptureScreenshot(driver).takeScreenchot("SignUp");
+                registration.Log(LogStatus.Info, "Snapshot below: " + registration.AddScreenCapture(imagePath));
+
             }
             return registration;
 
