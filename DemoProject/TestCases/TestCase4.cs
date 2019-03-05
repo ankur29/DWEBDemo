@@ -35,7 +35,11 @@ namespace DemoProject.TestCases
                 driver = manageDriver.parallelRun(browserName);
                 userRegistration = new UserRegistration(driver);
                 new TestRunner(driver).openApplication(appUrl, 6);            
+<<<<<<< HEAD
             //    registration = userRegistration.createUser(report,firstName,LastName);
+=======
+                registration = userRegistration.createUser(report);
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
                 test.AppendChild(systemHealthCheck).AppendChild(registration);
                 report.EndTest(test);
                 report.Flush();

@@ -122,8 +122,13 @@ namespace DemoProject.Library
             {
                 if (locator.Displayed)
                 {
+<<<<<<< HEAD
                     highlightText(locator);
                     locator.Clear();
+=======
+                    locator.Clear();
+                    highlightText(locator);
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
                     locator.SendKeys(text);
                 }
                 else
