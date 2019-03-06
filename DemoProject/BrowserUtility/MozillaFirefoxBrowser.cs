@@ -8,10 +8,13 @@ using OpenQA.Selenium;
 
 namespace DemoProject.BrowserUtility
 {
-    class MozillaFirefoxBrowser : TestRunner, Browsers
+    //definition to initiate mozilla browser
+    class MozillaFirefoxBrowser : Browsers
     {
+        //initiating mozilla browser
         public IWebDriver initiateBrowser()
         {
+            Console.WriteLine("Initiate Mozilla Browser");
             FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"E:\Drivers", "geckodriver.exe");
             return new FirefoxDriver(service);
         }
