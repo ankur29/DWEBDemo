@@ -6,8 +6,20 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using RelevantCodes.ExtentReports;
 using System;
+<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
+=======
+<<<<<<< HEAD
+using System.Collections;
+=======
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
 
 namespace DemoProject.TestCases
 {
@@ -21,6 +33,10 @@ namespace DemoProject.TestCases
         UserRegistration userRegistration;
         ExtentTest test, registration, systemHealthCheck;
         ReportGenerator reportGenerator = new ReportGenerator();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
         ReadTestData readTestData = new ReadTestData();
         Dictionary<string, string> testDataMap;
         public ArrayList keys;
@@ -33,12 +49,22 @@ namespace DemoProject.TestCases
             keys = readTestData.keyCount;
             Console.WriteLine("readTestData.keyCount="+readTestData.keyCount[0]);
         }
+<<<<<<< HEAD
+=======
+=======
+        
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
         [Test]
         //providing browser details
         [TestCaseSource(typeof(ManageDriver), "parallelBrowsers")]
         //Test cases steps
         public void runTest2(String browserName)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
             for (int i = 0; i < testDataMap.Count / 5; i++)
             {
                 String appUrl = "https://accounts.google.com/signin";      
@@ -60,8 +86,25 @@ namespace DemoProject.TestCases
                 test.AppendChild(systemHealthCheck).AppendChild(registration);
                 report.EndTest(test);
                 report.Flush();
+<<<<<<< HEAD
                 driver.Close();
             }
+=======
+            }
+=======
+            String appUrl = "https://accounts.google.com/signin";      
+            test = report.StartTest("Login Account", "Account Creation Steps");
+            driver = manageDriver.parallelRun(browserName);
+            test.AssignCategory(browserName);
+            systemHealthCheck = EnvironmentHealthCheck.checkUrlStatus(appUrl, report);
+            userRegistration = new UserRegistration(driver);
+            new TestRunner(driver).openApplication(appUrl, 6);         
+            registration = userRegistration.createUser(report);
+            test.AppendChild(systemHealthCheck).AppendChild(registration);
+            report.EndTest(test);
+            report.Flush();
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
         }        
 
         [TearDown]

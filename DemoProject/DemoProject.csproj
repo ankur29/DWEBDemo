@@ -108,7 +108,14 @@
     <Compile Include="Library\CaptureScreenshot.cs" />
     <Compile Include="Library\EnvironmentHealthCheck.cs" />
     <Compile Include="Library\PerformAction.cs" />
+<<<<<<< HEAD
     <Compile Include="Library\ReadTestData.cs" />
+=======
+<<<<<<< HEAD
+    <Compile Include="Library\ReadTestData.cs" />
+=======
+>>>>>>> f2a704b2f931c4c5802049b428fdafd79854bfc1
+>>>>>>> bde76d6760db2abd3f7041cd5ac1f8736f442dcb
     <Compile Include="ObjectRepository\LoginPage.cs" />
     <Compile Include="ObjectRepository\RegistrationPage.cs" />
     <Compile Include="ReportUtility\UIDriver.cs" />
